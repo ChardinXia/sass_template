@@ -1,0 +1,8 @@
+
+※電子頁色碼
+
+{{*Banner切換圖的按鈕色系設定*}}
+{{assign var="ELE_GAME_BANNER_COLOR_P" value=','|explode:"#FFF, #920608"}}
+
+{{*導覽列文字色系設定*}}
+{{assign var="ELENEW_NEWGAME_MENU02" value=','|explode:"#170F09,#170F09,#F00,#FFF,#FFF,#808080,#666,#FFF,#000,#000,#652E15,#000,#7E633C,#4E3C24"}}

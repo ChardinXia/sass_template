@@ -1,0 +1,310 @@
+@import "var";
+//清除浮動
+@mixin clearfix {
+  &:before,&:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear:both;
+  }
+}
+// 置中放置內容的區塊
+@mixin container-fixed($gutter: $grid-gutter-width) {
+  width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix;
+  box-sizing: border-box;
+}
+// 創建於主要區塊包含其他內容的區塊
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+}
+/*---------------------------- 基本變數 end ------------------------------------------*/
+
+/*---------------------------- 背景設定 ----------------------------------------------*/
+//圖片
+@mixin bg($img) {
+  width: image-width(#{$img});
+  height: image-height(#{$img});
+  background: image-url(#{$img}) no-repeat;
+}
+
+//按鈕圖片
+@mixin bg-btn($img) {
+  width: image-width(#{$img});
+  height: image-height(#{$img})/2;
+  background: image-url(#{$img}) no-repeat;
+  &:hover {background-position: bottom;}
+}
+
+//填色背景
+@mixin bg-color($bg-colorI: false, $borderI: false, $bg-colorII: false, $borderII: flase) {
+  box-sizing:border-box;
+  @if $bg-colorI {
+    background-color: $bg-colorI;
+  }
+  @if $borderI {
+    border: $borderI;
+  }
+  @if $bg-colorII {
+    &:hover {
+      background-color: $bg-colorII;
+    }
+  }
+  @if $borderII {
+    &:hover {
+      border: $borderII;
+    }
+  }
+}
+//背景色, 邊框, 滑入後顏色, 滑入後邊框
+/*---------------------------- 背景設定 end ------------------------------------------*/
+
+/*---------------------------- 文字屬性 ----------------------------------------------*/
+//文字 按鈕文字 (導覽列文字)
+@mixin font($font-size: $font-size-base, $line-height: $line-height-base, $primary: $text-color,$secondary: false) {
+    font-size: $font-size;
+  line-height: $line-height;
+    color:$primary;
+    @if  $secondary {
+    &:hover{color: $secondary;}
+  }
+}
+
+//文字尺寸, 文字行高, 文字顏色, 文字滑入顏色
+
+@mixin font-color($primary: $text-color,$secondary: false) {
+  @if  $secondary {
+    &:hover{color: $secondary;}
+  }
+  color:$primary;
+}
+ //文字顏色, 文字滑入顏色
+/*---------------------------- 文字屬性 end ------------------------------------------*/
+
+/*---------------------------- BOX 區塊屬性 ------------------------------------------*/
+@mixin box-float($width: null, $height: null, $float: false) {
+  @if $float == right{
+    float: right;
+  }
+  @if $float == left{
+    float: left;
+  }
+  @if $float == block {
+    display: block;
+  }
+  width: $width;
+  height: $height;
+}
+//寬, 高, 浮動或block
+
+@mixin box-padding-float($width: null, $height: null,$padding: false, $float: left) {
+  @if $float == right{
+    float: right;
+  }
+  @if $float == left{
+    float: left;
+  }
+  @if $float == block {
+    display: block;
+  }
+  @if $padding {
+    padding: $padding;
+    box-sizing: border-box;
+  }
+  width: $width;
+  height: $height;
+}
+//寬, 高, 浮動或block, 內距
+
+@mixin box-margin-float($width: null, $height: null, $margin: false , $float: left) {
+  @if $float == right{
+    float: right;
+  }
+  @if $float == left{
+    float: left;
+  }
+  @if $float == block {
+    display: block;
+  }
+  @if $margin {
+        margin: $margin;
+  }
+  width: $width;
+  height: $height;
+}
+//寬, 高, 外距, 浮動或block
+
+@mixin padding-float($padding: false, $float: false, $clear: false) {
+  @if $float == right{
+    float: right;
+  }
+  @if $float == left{
+    float: left;
+  }
+  @if $float == block {
+    display: block;
+  }
+  @if $float == both {
+    clear: both;
+  }
+  @if $clear {
+    clear: $clear;
+  }
+  @if $padding {
+    padding: $padding;
+    box-sizing: border-box;
+  }
+}
+//內距, 浮動或block或both, both
+
+@mixin margin-float($margin: false, $float: false, $clear: false) {
+  @if $float == right{
+    float: right;
+  }
+  @if $float == left{
+    float: left;
+  }
+  @if $float == both {
+    clear: both;
+  }
+  @if $float == block {
+    display: block;
+  }
+  @if $clear {
+    clear: $clear;
+  }
+  margin: $margin;
+}
+//外距, 浮動或block或both, both
+/*---------------------------- BOX 區塊屬性 end --------------------------------------*/
+
+/*---------------------------- 各類選單屬性 -------------------------------------------*/
+//一般文字清單
+@mixin font-list($font-size: 12px, $line-height: 12px, $primary: #FFF, $secondary: #FFF, $tertiary: false ) {
+  ul {
+    li  {
+      display:inline;
+      font-size: $font-size;
+      line-height: $line-height;
+      color: $primary;
+      a {
+        color: $primary;
+        @if $tertiary {
+          span {
+          color: $tertiary;
+          }
+        }
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+//文字大小, 行高, 背景色, 滑入色, 次色(包含在a元素中的span)
+
+//登入前
+@mixin input-color($bg-color:#f5f5f5, $border:1px solid #666) {
+  display: inline-block;
+  outline: none;
+  border: $border;
+  background-color: $bg-color;
+}
+//背景色, 邊框
+
+@mixin input-font-color($colorI:#DDD, $colorII:#CCC) {
+  text-indent: 6px;
+  &.form-control {
+    color: $colorII;
+    &.placeholder {
+      color: $colorI;
+    }
+  }
+}
+
+
+//登入後
+@mixin logon-acc {
+  div,span,p {
+    float:left;
+  }
+  div {
+    span,.fa {
+      margin:0 2px;
+    }
+      p {
+      margin:0 2px;
+    }
+  }
+  .obalance {
+    cursor: pointer;
+  }
+}
+
+@mixin Member-Sub-font($Member-color:#333,  $Member-border:1px solid #999, $Member-btn-color-primary:#FFF,$Member-btn-color-secondary:flase) {
+  #Member-Sub {
+    .MemberDate {
+      ul li {
+        color: $Member-color;
+        line-height: 18px;
+      }
+      .MemberChange {
+        border-top: $Member-border;
+      }
+    }
+  .btn_change{
+    line-height:24px;
+    color: $Member-btn-color-primary;
+    text-align:center;
+    @if $Member-btn-color-secondary{}
+      &:hover {
+        color: $Member-btn-color-secondary;
+      }
+    }
+  }
+}
+
+@mixin Member-Sub-bg($Member-bgcolor-primary:#F5F5F5,$Member-bgcolor-secondary:#FFF,$Member-btn-bgcolor-primary:#999,$Member-btn-bgcolor-secondary:666) {
+  #Member-Sub {
+    position: relative;
+    z-index: 9999;
+    clear: both;
+    .MemberDate {
+      display: none;
+      position: absolute;
+      width:270px;
+      height:80px;
+      padding-top:10px;
+      z-index: 100;
+      background-color: $Member-bgcolor-primary;
+      ul li {
+        width:250px;
+        margin:0 0 0 20px;
+      }
+      .MemberChange {
+        width:270px;
+        height:30px;
+        margin-top:10px;
+        background-color: $Member-bgcolor-secondary;
+      }
+    }
+      .btn_change{
+      float:right;
+      display:block;
+      width:64px;
+      margin:3px 6px 0 0;
+      background-color: $Member-btn-bgcolor-primary;
+      &:hover {
+        background-color: $Member-btn-bgcolor-secondary;
+      }
+    }
+  }
+}
+/*---------------------------- 各類選單屬性 end ---------------------------------------*/

@@ -1,0 +1,239 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+#wrap {
+  width: 1000px;
+  padding: 20px;
+}
+
+body {
+  background: #CBA167;
+  color: #170F09;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.color_ball {
+  margin-bottom: 20px;
+}
+.color_ball a.box01 {
+  color: #FFF;
+}
+.color_ball a.box02 {
+  color: #920608;
+}
+.color_ball .inside {
+  margin-left: 20px;
+}
+
+.color .elenew-live-trace {
+  float: left;
+  margin: 2px 0 0 16px;
+}
+.color .elenew-live-trace .elenew-trace-title {
+  font-size: 24px;
+  color: #170F09;
+}
+.color .elenew-live-trace .elenew-trace-sub {
+  color: #170F09;
+}
+.color .elenew-live-trace .gamenew-trace-num {
+  color: #F00;
+}
+.color #elenew-search-wrap {
+  position: relative;
+  float: right;
+  width: 300px;
+}
+.color #elenew-search-wrap a.elenew-search-btn {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 18px;
+  text-align: center;
+  color: #FFF;
+  background-color: #808080;
+}
+.color #elenew-search-wrap a.elenew-search-btn:active {
+  color: #FFF;
+  background-color: #666;
+}
+.color #elenew-search-wrap a.elenew-search-btn i {
+  margin-top: 5px;
+}
+.color #elenew-search-wrap a.elenew-search-btn .fa-2x {
+  font-size: 1.5em;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.color #elenew-search-wrap .elenew-search-input {
+  width: 268px;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 15px;
+  margin-right: 17px;
+  border-radius: 18px 0 0 18px;
+  background-color: #FFF;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.color #elenew-search-wrap .elenew-search-input input {
+  width: 250px;
+  height: 35px;
+  line-height: 35px\9;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+}
+.color .elenew-serch-noresult {
+  color: #000;
+}
+.color ::-webkit-input-placeholder {
+  color: #000;
+}
+.color :-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+.color ::-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+.color :-ms-input-placeholder {
+  color: #000;
+}
+.color .elenew-live-view {
+  float: right;
+  margin: 3px 0 0 10px;
+}
+.color .elenew-live-view span {
+  float: left;
+}
+.color .elenew-live-view span:before {
+  display: inline-block;
+  content: '';
+  width: 1px;
+  height: 23px;
+  background-color: #7E633C;
+  border-right: solid 1px;
+  border-color: #4E3C24;
+}
+.color .elenew-live-view a {
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  line-height: 28px;
+  padding-top: 1px;
+  padding: 0 5px;
+}
+.color .elenew-live-view a.view-active {
+  color: #000;
+}
+.color .elenew-live-view a.elenew-viewbtn-list {
+  color: #652E15;
+}
+.color #elenew-search-wrap .elenew-search-input input.placeholder {
+  color: #000;
+}
+
+ /* 	color-setC
+	1	標題的文字顏色
+	2	副標題的文字顏色
+	3	副標題的數字顏色
+	4	搜尋按鈕放大鏡圖片顏色
+	5	Active的搜尋按鈕放大鏡圖片顏色
+	6	搜尋按鈕底色
+	7	Active的搜尋按鈕底色
+	8	搜尋框底色
+	9	鍵入的搜尋文字顏色
+	10	搜尋框的預設文字顏色"請輸入遊戲名稱"
+	11	列表icon顏色
+	12	Active的列表icon顏色
+	13	左線
+	14	右線
+
+
+
+
+		 */

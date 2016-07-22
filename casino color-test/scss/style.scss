@@ -1,0 +1,42 @@
+@import "mixin";
+//
+body{
+	background:#CBA167;
+	color:#170F09;
+}
+
+p{
+	margin-bottom:10px;
+}
+
+.color_ball{
+	@include color-setA(#FFF, #920608);
+	margin-bottom:20px;
+	.inside{
+		margin-left:20px;
+	}
+}
+
+.color{
+
+	@include color-setC(#170F09,#170F09,#F00,#FFF,#FFF,#808080,#666,#FFF,#000,#000,#652E15,#000,#7E633C,#4E3C24);
+}/* 	color-setC
+	1	標題的文字顏色
+	2	副標題的文字顏色
+	3	副標題的數字顏色
+	4	搜尋按鈕放大鏡圖片顏色
+	5	Active的搜尋按鈕放大鏡圖片顏色
+	6	搜尋按鈕底色
+	7	Active的搜尋按鈕底色
+	8	搜尋框底色
+	9	鍵入的搜尋文字顏色
+	10	搜尋框的預設文字顏色"請輸入遊戲名稱"
+	11	列表icon顏色
+	12	Active的列表icon顏色
+	13	左線
+	14	右線
+
+
+
+
+		 */

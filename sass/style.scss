@@ -1,0 +1,121 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/border-radius";
+@import "var";
+@import "mixins";
+@import "base";
+@import "functions";
+
+
+//主要置中區塊
+.wrapper {
+  @include container-fixed;
+}
+
+.row {
+  @include make-row;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+
+//預設區塊寬度及置中 依需求增減
+#mainBody,.mainnav {
+  @extend .wrapper;
+}
+.header {
+  @extend .row;
+}
+
+/* 主要區塊 */
+#mainBody {
+  min-width: $container-width
+}
+
+
+
+
+
+// HEADER
+
+
+  /* LOGIN */
+.login-input input{
+  @include input-color(#F5F5F5, 1px solid #666);
+/*  1	登入區輸入框背景顏色
+    2	登入區輸入框邊框  */
+
+  @include input-font-color(#F00, #222);
+/*  1	登入區輸入框預設文字顏色
+    2	登入區輸入框鍵入文字顏色  */
+}
+
+  /* LOGON */
+.logon-acc {
+  @include logon-acc;
+  //logon-acc的基礎設定
+  @include Member-Sub-font(#333, 1px solid #999, #FFF, #CCC);
+/*  1	會員資訊文字顏色
+    2	中間的分隔線
+    3	額度轉換按鈕顏色
+    4	Hover的額度轉換按鈕顏色  */
+
+  @include Member-Sub-bg(#F5F5F5, #FFF, #999, #666);
+/*  1	會員資訊文字顏色
+    2	中間的分隔線
+    3	額度轉換按鈕顏色
+    4	Hover的額度轉換按鈕顏色  */
+
+}
+
+  /* NAV */
+.mainnav {
+  li {
+    float: left;
+  }
+}
+
+.ele-lsub-group a {
+    display: block;
+    width: 88px;
+    height: 38px;
+    line-height: 38px;
+    color: #792104;
+    text-decoration: none;
+    text-align: center;
+    font-family: arial;
+    background: #FFF;
+    &.last-lsub {
+    }
+    &:hover {
+        color: lighten(#792104, 15%);
+    }
+}
+
+/* SLIDER */
+
+/* NEWS */
+
+/* FIRST */
+
+/* TITLE */
+
+/* PAGE */
+
+/* FOOTER */
+
+
+
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  @include animation('slide-down 5s 3');
+}

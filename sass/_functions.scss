@@ -1,0 +1,94 @@
+//----國旗----//
+
+@if $lang-kind == Flag {
+  .lang-wrap {
+    a {
+      float: left;
+      width: 22px;
+      height: 20px;
+      margin: 0 2px;
+      background: image-url('not-use/flag.png') top no-repeat;
+      @for $i from 1 through 3 {
+      &.flag0#{$i} { background-position: 0px 40px-40px*$i  ; }
+      }
+    }
+  }
+}  @else {}
+
+//----首頁遊戲圖-廳主自改----//
+
+@if $first-game-format == pnglang {
+  .first-game {
+    a {
+      float: left;
+      width: image-width($lang+'game01.png');
+      height: image-height($lang+'game01.png');
+    }
+  }
+
+  @each $var in $first-game{
+    .first-#{$var} {
+      background: image-url($lang+'#{$var}.png') no-repeat;
+      &:hover {
+        background: image-url($lang+'#{$var}_over.png') no-repeat;
+      }
+    }
+
+  }
+} @else if $first-game-format == jpglang {
+  .first-game {
+    a {
+      float: left;
+      width: image-width($lang+'game01.jpg');
+      height: image-height($lang+'game01.jpg');
+    }
+  }
+
+  @each $var in $first-game{
+    .first-#{$var} {
+      background: image-url($lang+'#{$var}.jpg') no-repeat;
+      &:hover {
+        background: image-url($lang+'#{$var}_over.jpg') no-repeat;
+      }
+    }
+
+  }
+}@else if $first-game-format == png {
+  .first-game {
+    a {
+      float: left;
+      width: image-width('game01.png');
+      height: image-height('game01.png');
+    }
+  }
+
+  @each $var in $first-game{
+    .first-#{$var} {
+      background: image-url('#{$var}.png') no-repeat;
+      &:hover {
+        background: image-url('#{$var}_over.png') no-repeat;
+      }
+    }
+
+  }
+} @else if $first-game-format == jpg {
+  .first-game {
+    a {
+      float: left;
+      width: image-width('game01.jpg');
+      height: image-height('game01.jpg');
+    }
+  }
+
+  @each $var in $first-game{
+    .first-#{$var} {
+      background: image-url('#{$var}.jpg') no-repeat;
+      &:hover {
+        background: image-url('#{$var}_over.jpg') no-repeat;
+      }
+    }
+
+  }
+} @else {}
+
+

@@ -1,0 +1,243 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/*---------------------------- 基本變數 end ------------------------------------------*/
+/*---------------------------- 背景設定 ----------------------------------------------*/
+/*---------------------------- 背景設定 end ------------------------------------------*/
+/*---------------------------- 文字屬性 ----------------------------------------------*/
+/*---------------------------- 文字屬性 end ------------------------------------------*/
+/*---------------------------- BOX 區塊屬性 ------------------------------------------*/
+/*---------------------------- BOX 區塊屬性 end --------------------------------------*/
+/*---------------------------- 各類選單屬性 -------------------------------------------*/
+/*---------------------------- 各類選單屬性 end ---------------------------------------*/
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: STHeiti, "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", arial;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #222222;
+  background-color: #eeeeee; }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+input, button, select, textarea {
+  outline: none; }
+
+*:focus {
+  outline: none; }
+
+a {
+  color: #333333;
+  text-decoration: none; }
+  a:hover, a:focus {
+    color: #595959;
+    text-decoration: none; }
+
+* {
+  box-sizing: border-box; }
+
+.wrapper, #mainBody, .mainnav {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box; }
+  .wrapper:before, #mainBody:before, .mainnav:before, .wrapper:after, #mainBody:after, .mainnav:after {
+    content: "";
+    display: table; }
+  .wrapper:after, #mainBody:after, .mainnav:after {
+    clear: both; }
+
+.row, .header {
+  margin-left: 0;
+  margin-right: 0; }
+  .row:before, .header:before, .row:after, .header:after {
+    content: "";
+    display: table; }
+  .row:after, .header:after {
+    clear: both; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+/* 主要區塊 */
+#mainBody {
+  min-width: 1000px; }
+
+/* LOGIN */
+.login-input input {
+  display: inline-block;
+  outline: none;
+  border: 1px solid #666;
+  background-color: #F5F5F5;
+  /*  1	登入區輸入框背景顏色
+      2	登入區輸入框邊框  */
+  text-indent: 6px;
+  /*  1	登入區輸入框預設文字顏色
+      2	登入區輸入框鍵入文字顏色  */ }
+  .login-input input.form-control {
+    color: #222; }
+    .login-input input.form-control.placeholder {
+      color: #F00; }
+
+/* LOGON */
+.logon-acc {
+  /*  1	會員資訊文字顏色
+      2	中間的分隔線
+      3	額度轉換按鈕顏色
+      4	Hover的額度轉換按鈕顏色  */
+  /*  1	會員資訊文字顏色
+      2	中間的分隔線
+      3	額度轉換按鈕顏色
+      4	Hover的額度轉換按鈕顏色  */ }
+  .logon-acc div, .logon-acc span, .logon-acc p {
+    float: left; }
+  .logon-acc div span, .logon-acc div .fa {
+    margin: 0 2px; }
+  .logon-acc div p {
+    margin: 0 2px; }
+  .logon-acc .obalance {
+    cursor: pointer; }
+  .logon-acc #Member-Sub .MemberDate ul li {
+    color: #333;
+    line-height: 18px; }
+  .logon-acc #Member-Sub .MemberDate .MemberChange {
+    border-top: 1px solid #999; }
+  .logon-acc #Member-Sub .btn_change {
+    line-height: 24px;
+    color: #FFF;
+    text-align: center; }
+    .logon-acc #Member-Sub .btn_change:hover {
+      color: #CCC; }
+  .logon-acc #Member-Sub {
+    position: relative;
+    z-index: 9999;
+    clear: both; }
+    .logon-acc #Member-Sub .MemberDate {
+      display: none;
+      position: absolute;
+      width: 270px;
+      height: 80px;
+      padding-top: 10px;
+      z-index: 100;
+      background-color: #F5F5F5; }
+      .logon-acc #Member-Sub .MemberDate ul li {
+        width: 250px;
+        margin: 0 0 0 20px; }
+      .logon-acc #Member-Sub .MemberDate .MemberChange {
+        width: 270px;
+        height: 30px;
+        margin-top: 10px;
+        background-color: #FFF; }
+    .logon-acc #Member-Sub .btn_change {
+      float: right;
+      display: block;
+      width: 64px;
+      margin: 3px 6px 0 0;
+      background-color: #999; }
+      .logon-acc #Member-Sub .btn_change:hover {
+        background-color: #666; }
+
+/* NAV */
+.mainnav li {
+  float: left; }
+
+.ele-lsub-group a {
+  display: block;
+  width: 88px;
+  height: 38px;
+  line-height: 38px;
+  color: #792104;
+  text-decoration: none;
+  text-align: center;
+  font-family: arial;
+  background: #FFF; }
+  .ele-lsub-group a:hover {
+    color: #c33506; }
+
+/* SLIDER */
+/* NEWS */
+/* FIRST */
+/* TITLE */
+/* PAGE */
+/* FOOTER */
+@-moz-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+@keyframes slide-down {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 0; } }
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  -moz-animation: "slide-down 5s 3";
+  -webkit-animation: "slide-down 5s 3";
+  animation: "slide-down 5s 3"; }
